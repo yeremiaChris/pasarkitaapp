@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pasarkita/css/tambah-barang.css' %}">
+    <link rel="stylesheet" href="{% static 'pasarkita/css/select2.min.css' %}">
+    <title>Pasar</title>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="brand">
+            <h1><img src="{% static 'pasarkita/img/pasar.png' %}" alt=""> PasarKita</h1>
+        </div>
+        <div class="pencarian">
+            <input type="text" placeholder="cari...">
+        </div>
+        <div class="login">
+            <a href=""><img src="{% static 'pasarkita/img/user.png' %}" alt="">
+                <h1>Login</h1>
+            </a>
+        </div>
+    </div>
+    <div class="cari bawah">
+        <input type="text" placeholder="cari...">
+    </div>
+    <div class="container-tambah">
+            <div class="input judul">
+                <h1>Tambah Barang</h1>
+            </div>
+            <div class="input foto">
+                <label for="foto">*Foto</label>
+                <div class="foto-input">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form.image }}
+                        {{form.id}}
+                    <div class="gambar">
+                        <img src="{% static 'pasarkita/img/phone.png' %}" class="img-preview">
+                    </div>
+                </div>
+            </div>
+            <div class="input nama-barang">
+                <label for="nama-barang">*Nama Barang</label>
+                <input type="text" name="nama-barang">
+            </div>
+            <div class="input deskripsi">
+                <label for="deskripsi">*Deskripsi</label>
+                <textarea name="deskripsi" id="satu" cols="50" rows="10"></textarea>
+                <textarea name="deskripsi" id="dua" cols="117" rows="15"></textarea>
+            </div>
+            <div class="input kategori">
+                <label for="kategori">*Kategori</label>
+                <select class="js-example-basic-single" name="kategori">
+                    <option value="AL">Alabama</option>
+                    ...
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <div class="input harga">
+                <label for="harga">*Harga</label>
+                <input type="number" name="harga" >
+            </div>
+            <div class="btn">
+                <button type="submit">Simpan</button>
+            </div>
+            </form>
+           
+    </div>
+
+
+
+    <footer>
+        <div class="satu">
+            <img src="{% static 'pasarkita/img/pasar.png' %}" alt="">
+            <h1>Pasar Kita</h1>
+        </div>
+        <div class="dua">
+            <h1>Info</h1>
+            <h3>Tentang Pasar Kita</h3>
+            <h3>Produk</h3>
+            <h3>Program</h3>
+            <h3>Menjadi Mitra</h3>
+            <h3>Karir</h3>
+        </div>
+        <div class="tiga">
+            <h1>Kontak</h1>
+            <h3>Github</h3>
+            <h3>Whatsapp</h3>
+            <h3>Facebook</h3>
+            <h3>Instagram</h3>
+            <h3>Youtube</h3>
+        </div>
+        <div class="empat">
+            <img src="{% static 'pasarkita/img/phone.png' %}" alt="">
+            <img src="{% static 'pasarkita/img/playstore.png' %}" alt="">
+        </div>
+    </footer>
+
+
+    <script src="{% static 'pasarkita/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'pasarkita/js/select2.min.js' %}"></script>
+    <script>
+        // In your Javascript (external .js resource or <script> tag)
+            $(document).ready(function () {
+                $('.js-example-basic-single').select2();
+            });
+    </script>
+    
+
+    <script>
+
+        function previewImg() {
+
+            const sampul = document.querySelector('#sampul');
+            const imgPreview  = document.querySelector('.img-preview');
+
+
+            const fileSampul = new FileReader();
+            fileSampul.readAsDataURL(sampul.files[0])
+
+
+            fileSampul.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

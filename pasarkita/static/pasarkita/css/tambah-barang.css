@@ -1,0 +1,384 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* mycss */
+
+
+body {
+    background-color: aliceblue;
+}
+
+
+.topbar{
+    background-color: aliceblue;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+   }
+
+.topbar .login a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid rgb(187, 178, 178);
+    border-radius: 5px;
+}
+.topbar .login img{
+    width: 30px;
+    height: 30px;
+}
+.topbar .login h1 {
+    display: flex;
+    align-self: center;
+    margin-left: 5px;
+}
+
+.brand h1{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    color: maroon;
+    font-size: 15pt;
+}
+
+.brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.pencarian input {
+    display: none;
+}
+.cari  {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.cari input {
+    width: 100%;
+    margin: auto;
+}
+footer{
+    background-color: white;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+footer .satu {
+    display: none;
+}
+
+footer .dua h1 {
+    font-weight: bold;
+}
+footer .dua,.tiga {
+    line-height: 50px;
+    text-align: center;
+}
+footer .tiga h1 {
+    font-weight: bold;
+}
+footer .empat {
+    margin-top: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr;
+} 
+footer .empat img:last-child{
+    width: 250px;
+    height: 100px;
+    display: grid;
+    align-self: center;
+}
+.container-tambah {
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.container-tambah div {
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+#dua {
+    display: none;    
+}
+
+.input.judul  {
+    padding: 20px;
+    font-size: 20pt;
+    font-weight: bold;
+}
+.container-tambah .input {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container-tambah .input.foto .foto-input {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    margin-left: 140px;
+}
+.container-tambah .input.foto .foto-input .gambar {
+    margin: auto;
+}
+.container-tambah
+
+.container-tambah .input label {
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.container-tambah .input.kategori select {
+    width: 100%;
+}
+
+.container-tambah .btn button {
+    margin: 20px 10px;
+    height: 30px;
+    border: none;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px){
+.topbar{
+    background-color: aliceblue;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    width: 1520px;
+    margin: auto;
+    margin-bottom: 20px;
+   }
+.cari {
+    display: none;
+}
+.brand h1{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    color: maroon;
+    font-size: 15pt;
+}
+
+.pencarian input {
+    display: inline-block;
+    background-color: white;
+    border: none;
+    margin-left: 20px;
+    padding: 5px;
+    font-size: 15pt;
+    box-sizing: border-box;
+}
+.pencarian input:focus {
+    border-color: rgb(34, 29, 29);
+}
+.login {
+       margin-left: auto;
+       margin-right: 20px;
+}
+.topbar .login a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid rgb(187, 178, 178);
+    border-radius: 5px;
+}
+.topbar .login img{
+    width: 30px;
+    height: 30px;
+}
+.topbar .login h1 {
+    display: flex;
+    align-self: center;
+    margin-left: 5px;
+}
+.brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#satu {
+    display: none;
+}
+#dua {
+    display: inline-block;
+}
+.container-tambah {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: white;
+    width: 1200px;
+    margin: auto;
+}
+.container-tambah div:first-child{
+    margin-left: 20px;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+}
+.container-tambah .btn button {
+    margin-left: auto;
+    margin-right: 100px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+}
+
+.container-tambah div {
+    margin: auto;
+    width: 1200px;
+    display: flex;
+    margin-bottom: 20px;
+}
+.container-tambah .input input{
+    width: 70%;
+    
+}
+.container-tambah .deskripsi input {
+    height: 250px;
+    
+}
+
+.container-tambah .input label {
+    width: 200px;
+    margin-left: 50px;
+}
+.container-tambah .input.kategori select {
+    width: 515px;
+}
+.container-tambah .input.harga input {
+    width: 500px;
+}
+.container-tambah .input.berat input {
+    width: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+footer{
+    margin-top: 20px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    justify-items: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+footer .satu {
+    display: flex;
+}
+footer .satu h1 {
+    line-height: 50px;
+}
+footer .satu img{
+    width: 50px;
+    height: 50px;
+}
+footer .dua h1 {
+    font-weight: bold;
+}
+footer .dua {
+    line-height: 50px;
+}
+footer .tiga {
+    line-height: 50px;
+}
+footer .tiga h1 {
+    font-weight: bold;
+}
+footer .empat {
+    display: flex;
+} 
+footer .empat img:last-child{
+    width: 250px;
+    height: 100px;
+    display: grid;
+    align-self: center;
+}
+
+}
