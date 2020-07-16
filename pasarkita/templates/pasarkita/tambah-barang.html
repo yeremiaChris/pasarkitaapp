@@ -34,35 +34,37 @@
             <div class="input foto">
                 <label for="foto">*Foto</label>
                 <div class="foto-input">
-                    <form action="" method="POST">
-                        {% csrf_token %}
-                        {{ form.image }}
-                        {{form.id}}
-                    <div class="gambar">
-                        <img src="{% static 'pasarkita/img/phone.png' %}" class="img-preview">
-                    </div>
+                    <form action="{% url 'tambah-barang' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            {{ form.image.errors }}
+                            {{ form.image }}
+                        <div class="gambar">
+                            <img src="{% static 'pasarkita/img/' %}" class="img-preview" width="100px" height="100px">
+                        </div>     
                 </div>
             </div>
             <div class="input nama-barang">
                 <label for="nama-barang">*Nama Barang</label>
-                <input type="text" name="nama-barang">
+                {{ form.nama.errors }}
+                {{ form.nama }}
             </div>
             <div class="input deskripsi">
                 <label for="deskripsi">*Deskripsi</label>
-                <textarea name="deskripsi" id="satu" cols="50" rows="10"></textarea>
-                <textarea name="deskripsi" id="dua" cols="117" rows="15"></textarea>
+                {{ form.deskripsi.errors }}
+                {{ form.deskripsi }}
+                {{ form.deskripsi2.errors }}
+                {{ form.deskripsi2 }}
             </div>
             <div class="input kategori">
                 <label for="kategori">*Kategori</label>
-                <select class="js-example-basic-single" name="kategori">
-                    <option value="AL">Alabama</option>
-                    ...
-                    <option value="WY">Wyoming</option>
-                </select>
+                {{ form.kategori.errros }}
+                {{ form.kategori }}
             </div>
             <div class="input harga">
                 <label for="harga">*Harga</label>
-                <input type="number" name="harga" >
+                {{ form.harga.errors }}
+                {{ form.harga }}
             </div>
             <div class="btn">
                 <button type="submit">Simpan</button>

@@ -1,7 +1,5 @@
 from django.shortcuts import render,redirect
 
-from . models import Image
-
 
 
 from . forms import TambahBarangForm
@@ -18,15 +16,7 @@ def index(request):
 
 def tambahBarang(request): 
     form = TambahBarangForm()
-
-    if request.method == 'POST':
-        form = TambahBarangForm(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-            
-        return redirect('tambah-barang')
-
     context = {
-        'form': form,
+        'form': form
     }
     return render(request,'pasarkita/tambah-barang.html',context)

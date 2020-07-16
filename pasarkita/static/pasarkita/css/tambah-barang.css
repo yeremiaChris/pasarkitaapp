@@ -181,7 +181,14 @@ footer .empat img:last-child{
 }
 .container-tambah .input.foto .foto-input .gambar {
     margin: auto;
+    margin-top: 10px;
 }
+
+.container-tambah .input.foto .foto-input {
+    height: 100px;
+    margin-left: 160px;
+}
+
 .container-tambah
 
 .container-tambah .input label {

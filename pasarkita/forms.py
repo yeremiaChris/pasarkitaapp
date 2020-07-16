@@ -1,16 +1,14 @@
 from django import forms
+from .models import Barang
 
-from .models import Image
-
-
-
-# class ImageForm(forms.Form):
-#     image = forms.FileField(widget=forms.ClearableFileInput(attrs={'id': 'sampul','onchange': 'previewImg()'}))
 
 class TambahBarangForm(forms.ModelForm):
     class Meta:
-        model = Image
-        fields = '__all__'
+        model = Barang
+        fields = ['image', 'nama', 'deskripsi','deskripsi2', 'kategori', 'harga']
         widgets = {
-            'image': forms.ClearableFileInput(attrs={'id': 'sampul', 'onchange': 'previewImg()'})
+            'image': forms.ClearableFileInput(attrs={'id': 'sampul', 'onchange': 'previewImg()'}),
+            'deskripsi': forms.Textarea(attrs={'id': 'satu','cols': '50','rows':'10'}),
+            'deskripsi2': forms.Textarea(attrs={'id': 'dua','cols': '117','rows':'15'}),
+            'kategori': forms.Select(attrs={'class':'js-example-basic-single','name':'kategori'})
         }
