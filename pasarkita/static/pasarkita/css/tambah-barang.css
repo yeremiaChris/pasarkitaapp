@@ -173,6 +173,11 @@ footer .empat img:last-child{
     margin-left: 10px;
     margin-right: 10px;
 }
+.container-tambah .input.foto  label{
+
+    margin-top: 10px;
+    
+}
 
 .container-tambah .input.foto .foto-input {
     display: grid;
@@ -183,13 +188,15 @@ footer .empat img:last-child{
     margin: auto;
     margin-top: 10px;
 }
-
 .container-tambah .input.foto .foto-input {
-    height: 100px;
+    height: 120px;
     margin-left: 160px;
 }
 
-.container-tambah
+
+form .gambar img{
+    margin-right: 200px;
+}
 
 .container-tambah .input label {
     width: 200px;
@@ -337,6 +344,18 @@ footer .empat img:last-child{
 .container-tambah .input.berat input {
     width: 500px;
 }
+
+form .input-gambar {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+
+
+
+
+
 
 
 

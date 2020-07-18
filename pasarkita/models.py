@@ -5,7 +5,6 @@ from django.conf import settings
 
 
 class Barang(models.Model):
-    image = models.FileField(upload_to='gambar/')
     nama = models.CharField(max_length=200,default='Produk')
     deskripsi = models.TextField(max_length=500,default='keterangan')
     deskripsi2 = models.TextField(max_length=500,default='keterangan')
@@ -21,3 +20,6 @@ class Barang(models.Model):
     kategori  = models.CharField(max_length=200,choices=CATEGORY,default='Sayur')
     harga = models.IntegerField(default=0)
 
+class Images(models.Model):
+    barang = models.ForeignKey(Barang,on_delete=models.CASCADE)
+    images = models.ImageField(upload_to='gambar')

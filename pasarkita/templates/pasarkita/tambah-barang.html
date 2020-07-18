@@ -32,14 +32,20 @@
                 <h1>Tambah Barang</h1>
             </div>
             <div class="input foto">
+                
                 <label for="foto">*Foto</label>
                 <div class="foto-input">
                     <form action="{% url 'tambah-barang' %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-
-                            {{ form.image.errors }}
-                            {{ form.image }}
+                        <div class="input-gambar">
+                            <!-- {{ formset.as_p }} -->
+                            {{ formset.management_form }}
+                            {% for fr in formset %}
+                                {{ fr.images }}
+                            {% endfor %}
+                        </div>
                         <div class="gambar">
+                            <img src="{% static 'pasarkita/img/' %}" class="img-preview" width="100px" height="100px">
                             <img src="{% static 'pasarkita/img/' %}" class="img-preview" width="100px" height="100px">
                         </div>     
                 </div>
