@@ -20,6 +20,12 @@ class Barang(models.Model):
     kategori  = models.CharField(max_length=200,choices=CATEGORY,default='Sayur')
     harga = models.IntegerField(default=0)
 
+    def __str__(self):
+        return str(self.id)
+
 class Images(models.Model):
     barang = models.ForeignKey(Barang,on_delete=models.CASCADE)
     images = models.ImageField(upload_to='gambar')
+
+    def __str__(self):
+        return str(self.id)

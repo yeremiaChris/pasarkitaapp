@@ -46,7 +46,7 @@
                         </div>
                         <div class="gambar">
                             <img src="{% static 'pasarkita/img/' %}" class="img-preview" width="100px" height="100px">
-                            <img src="{% static 'pasarkita/img/' %}" class="img-preview" width="100px" height="100px">
+                            <img src="{% static 'pasarkita/img/' %}" class="img-preview" width="100px" height="100px" id="lima">
                         </div>     
                 </div>
             </div>
@@ -104,7 +104,7 @@
         </div>
         <div class="empat">
             <img src="{% static 'pasarkita/img/phone.png' %}" alt="">
-            <img src="{% static 'pasarkita/img/playstore.png' %}" alt="">
+            <img src="{% static 'pasarkita/img/playstore.png' %}" alt="" id="one">
         </div>
     </footer>
 
@@ -121,21 +121,35 @@
 
     <script>
 
-        function previewImg() {
-
-            const sampul = document.querySelector('#sampul');
-            const imgPreview  = document.querySelector('.img-preview');
+                const sampul = document.querySelectorAll('#sampul');
+                const imgPreview  = document.querySelectorAll('.img-preview');
 
 
-            const fileSampul = new FileReader();
-            fileSampul.readAsDataURL(sampul.files[0])
 
 
-            fileSampul.onload = function(e) {
-                imgPreview.src = e.target.result;
-            }
+
+    for(let k = 0; k < 2; k++){
+
+        sampul[k].onchange = function() {
+
+                for(let i = 0; i < sampul.length; i++){        
+                    const fileSampul = new FileReader();
+
+
+                    fileSampul.onload = function(e) {
+                        imgPreview[i].src = e.target.result;
+                    }
+
+
+                    if(sampul[i].files[0]){
+                        fileSampul.readAsDataURL(sampul[i].files[0])
+                    }
+                }
 
         }
+    }
+        
+        
     </script>
 </body>
 
