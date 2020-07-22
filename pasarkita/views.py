@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
 
 
-from .models import Images
-from . forms import TambahBarangForm
+from .models import Images,Barang
+from . forms import TambahBarangForm,registerForm
 from django.forms import modelformset_factory
 from django import forms
+from django.contrib.auth import authenticate,login
 
 
 
@@ -17,7 +18,11 @@ from django import forms
 
 # Create your views here.
 def index(request):
-    return render(request,'pasarkita/index.html')
+    barang = Images.objects.all()
+    context = {
+        'barang': barang, 
+    }
+    return render(request,'pasarkita/index.html',context)
 
 
 def tambahBarang(request): 
@@ -33,8 +38,9 @@ def tambahBarang(request):
 
             for f in formset:
                 try:
-                    photo = Images(barang=barang,images=f.cleaned_data['images'])
+                    photo = Images(images=f.cleaned_data['images'])
                     photo.save()
+                    
                 except expression as identifier:
                     pass
             return redirect('index')
@@ -43,6 +49,23 @@ def tambahBarang(request):
         formset = ImageFormSet(queryset=Images.objects.none())
     context = {
         'form': form,
-        'formset':formset
+        'formset':formset,
     }
     return render(request,'pasarkita/tambah-barang.html',context)
+
+
+def register(request):
+    form = registerForm()
+    if request.method == 'POST':
+        form = registerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password1']
+            user = authenticate(email=email,password=password)
+            login(request,user)
+        return redirect('login')
+    context = {
+        'form': form
+    }
+    return render(request,'registration/register.html',context)

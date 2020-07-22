@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pasarkita/css/login.css' %}">
+    <title>login pasar</title>
+</head>
+
+<body>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="logo">
+                <h1> </h1>
+            </div>
+            <div class="input">
+                {{ form.username }}
+                {{ form.password }}
+            </div>
+            <div class="button">
+                <button type="submit">LOGIN</button>
+            </div>
+        </div>
+        <div class="register">
+            <h1>
+                <hr> New account
+                <hr>
+            </h1>
+            <a href="{% url 'register' %}">register</a>
+        </div>
+    </form>
+    <footer>
+        <p>Copyright &copy; 2020 pasarkita.com </p>
+    </footer>
+</body>
+
+</html>

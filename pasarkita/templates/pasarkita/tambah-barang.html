@@ -32,14 +32,13 @@
                 <h1>Tambah Barang</h1>
             </div>
             <div class="input foto">
-                
                 <label for="foto">*Foto</label>
                 <div class="foto-input">
                     <form action="{% url 'tambah-barang' %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                         <div class="input-gambar">
-                            <!-- {{ formset.as_p }} -->
-                            {{ formset.management_form }}
+                            <!-- {{ formset.as_p }}
+                            {{ formset.management_form }} -->
                             {% for fr in formset %}
                                 {{ fr.images }}
                             {% endfor %}
@@ -61,6 +60,13 @@
                 {{ form.deskripsi }}
                 {{ form.deskripsi2.errors }}
                 {{ form.deskripsi2 }}
+            </div>
+            <div class="input deskripsi">
+                <label for="deskripsi">*alamat</label>
+                {{ form.alamat.errors }}
+                {{ form.alamat }}
+                {{ form.alamat2.errors }}
+                {{ form.alamat2 }}
             </div>
             <div class="input kategori">
                 <label for="kategori">*Kategori</label>

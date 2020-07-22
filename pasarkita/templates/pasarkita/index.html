@@ -110,111 +110,27 @@
         <div class="div"></div>
     </div>
     <div class="isi">
-        <div class="satu">
-            <div class="gambar">
-                <img src="img/slider3.jpg" alt="">
-            </div>
-            <div class="deskripsi">
-                <p>Sayur segar berkhasiat dan murah meriah</p>
-            </div>
-            <div class="harga">
-                <p>Rp 20.000</p>
-                <p>Kolong</p>
-            </div>
-            <div class="tombol-tambah">
-                <a href="">View</a>
-            </div>
-        </div>
-        <div class="satu">
-            <div class="gambar">
-                <img src="img/slider2.jpg" alt="">
-            </div>
-            <div class="deskripsi">
-                <p>Sayur segar berkhasiat dan murah meriah</p>
-            </div>
-            <div class="harga">
-                <p>Rp 20.000</p>
-                <p>Kolong</p>
-            </div>
-            <div class="tombol-tambah">
-                <a href="">View</a>
-            </div>
-        </div>
-        <div class="satu">
-            <div class="gambar">
-                <img src="img/slider1.jpg" alt="">
-            </div>
-            <div class="deskripsi">
-                <p>Sayur segar berkhasiat dan murah meriah</p>
-            </div>
-            <div class="harga">
-                <p>Rp 20.000</p>
-                <p>Kolong</p>
-            </div>
-            <div class="tombol-tambah">
-                <a href="">View</a>
-            </div>
-        </div>
-        <div class="satu">
-            <div class="gambar">
-                <img src="img/slider1.jpg" alt="">
-            </div>
-            <div class="deskripsi">
-                <p>Sayur segar berkhasiat dan murah meriah</p>
-            </div>
-            <div class="harga">
-                <p>Rp 20.000</p>
-                <p>Kolong</p>
-            </div>
-            <div class="tombol-tambah">
-                <a href="">View</a>
-            </div>
-        </div>
-        <div class="satu">
-            <div class="gambar">
-                <img src="img/slider1.jpg" alt="">
-            </div>
-            <div class="deskripsi">
-                <p>Sayur segar berkhasiat dan murah meriah</p>
-            </div>
-            <div class="harga">
-                <p>Rp 20.000</p>
-                <p>Kolong</p>
-            </div>
-            <div class="tombol-tambah">
-                <a href="">View</a>
-            </div>
-        </div>
-        <div class="satu">
-            <div class="gambar">
-                <img src="img/slider1.jpg" alt="">
-            </div>
-            <div class="deskripsi">
-                <p>Sayur segar berkhasiat dan murah meriah</p>
-            </div>
-            <div class="harga">
-                <p>Rp 20.000</p>
-                <p>Kolong</p>
-            </div>
-            <div class="tombol-tambah">
-                <a href="">View</a>
-            </div>
-        </div>
-        <div class="satu">
-            <div class="gambar">
-                <img src="img/slider1.jpg" alt="">
-            </div>
-            <div class="deskripsi">
-                <p>Sayur segar berkhasiat dan murah meriah</p>
-            </div>
-            <div class="harga">
-                <p>Rp 20.000</p>
-                <p>Kolong</p>
-            </div>
-            <div class="tombol-tambah">
-                <a href="">View</a>
-            </div>
-        </div>
+       
+        
+       
+        {% for brg in barang %}
+                <div class="satu">
+                        <div class="gambar">
+                            <img src="{{ brg.images.url }}" alt="">
+                        </div>
+                        <div class="deskripsi">
+                            <p>{{brg.nama}}</p>
+                        </div>
+                        <div class="harga">
+                            <p>Rp {{brg.harga}}</p>
+                            <p>Kolong</p>
+                        </div>
+                        <div class="tombol-tambah">
+                            <a href="">View</a>
+                        </div>
+                </div>
+        {% endfor %}
+
 
     </div>
     <div class="lihat-semua">
